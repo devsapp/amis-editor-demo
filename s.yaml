@@ -33,12 +33,12 @@ services:
     component: fc # 组件名称
     actions:
       pre-deploy: # 在deploy之前运行
-        # - run: npm i --force --registry=https://registry.npmmirror.com
-        #   path: ./
-        # - run: npm run build
-        #   path: ./
-        - run: sed -i -e 's/https:\/\/aisuda.github.io\/amis-editor-demo\/demo/./g' ./index.html
-          path: ./demo
+        - run: sed -i -e 's/https:\/\/aisuda.github.io\/amis-editor-demo\/demo/./g' ./amis.config
+          path: ./
+        - run: npm i --force --registry=https://registry.npmmirror.com
+          path: ./
+        - run: npm run build
+          path: ./
         - run: cp ./nginx.conf ./demo/nginx.conf      # 要执行的系统命令，类似于一种钩子的形式
           path: ./
     props: # 组件的属性值
