@@ -2,7 +2,7 @@ Type: Application
 Name: start-amis-editor
 Provider:
   - 阿里云
-Version: 0.0.1
+Version: 0.0.2
 Description: 部署百度amis 低代码可视化编辑器示例
 HomePage: https://github.com/devsapp/amis-editor-demo
 Tags:

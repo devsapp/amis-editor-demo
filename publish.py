@@ -8,6 +8,7 @@ eve_app = 'start-amis-editor'
 print("----------------------: ", eve_app)
 
 shutil.move("publish.yaml", "../publish.yaml")
+os.rename('amis-editor-demo', "src")
 
 publish_script = 'https://serverless-registry.oss-cn-hangzhou.aliyuncs.com/publish-file/python3/hub-publish.py'
 command = 'cd ../ && wget %s && python hub-publish.py' % (publish_script)
