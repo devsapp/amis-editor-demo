@@ -33,7 +33,7 @@ services:
     component: fc # 组件名称
     actions:
       pre-deploy: # 在deploy之前运行
-        - run: sed -i -e 's/https:\/\/aisuda.github.io\/amis-editor-demo\/demo/./g' ./amis.config
+        - run: sed -i -e 's/https:\/\/aisuda.github.io\/amis-editor-demo\/demo/./g' amis.config.js
           path: ./
         - run: npm i --force --registry=https://registry.npmmirror.com
           path: ./
