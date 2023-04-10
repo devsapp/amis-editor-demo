@@ -14,7 +14,7 @@ os.rename("_tmp", 'amis-editor-demo')
 shutil.move("./amis-editor-demo/src/publish.yaml", "./amis-editor-demo/publish.yaml")
 
 publish_script = 'https://serverless-registry.oss-cn-hangzhou.aliyuncs.com/publish-file/python3/hub-publish.py'
-command = 'cd ./ && wget %s && python hub-publish.py' % (publish_script)
+command = 'cd ./amis-editor-demo && wget %s && python hub-publish.py' % (publish_script)
 child = subprocess.Popen(
     command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True, )
 stdout, stderr = child.communicate()
