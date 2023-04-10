@@ -11,10 +11,12 @@ os.chdir('../')
 os.makedirs("_tmp", exist_ok=True)
 os.rename('amis-editor-demo', "_tmp/src")
 os.rename("_tmp", 'amis-editor-demo')
-with open(".signore", "w") as file:
-    file.write("./src/.git\n./src/.github")
-
 shutil.move("./amis-editor-demo/src/publish.yaml", "./amis-editor-demo/publish.yaml")
+try:
+    shutil.rmtree("./amis-editor-demo/src/.git")
+    shutil.rmtree("./amis-editor-demo/src/.github")
+except OSError as e:
+    print("删除.git文件失败:", e)
 
 publish_script = 'https://serverless-registry.oss-cn-hangzhou.aliyuncs.com/publish-file/python3/hub-publish.py'
 command = 'cd ./amis-editor-demo && wget %s && python hub-publish.py' % (publish_script)
